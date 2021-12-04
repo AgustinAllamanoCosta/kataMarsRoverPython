@@ -7,7 +7,7 @@ import unittest
 
 class TestMarsRover(unittest.TestCase):
     
-    def dadoQueReciboUnaPosicionVerificoQueSeInicializaElObjetoConLaMisma(self):
+    def test_dadoQueReciboUnaPosicionUnoUnoVerificoQueSeInicializaElObjetoConLaMisma(self):
         
         rover = MarsRover();
         
@@ -16,14 +16,23 @@ class TestMarsRover(unittest.TestCase):
         assert rover.getPosicion() == (1,1)
         assert rover.getFacing() == "N"
         
+    def test_dadoQueReciboUnaPosicionDosDosVerificoQueSeInicializaElObjetoConLaMism(self):
+        
+        rover = MarsRover();
+        
+        rover.setPosicion((2,2),"S")
+        
+        assert rover.getPosicion() == (2,2)
+        assert rover.getFacing() == "S"
         
 class MarsRover():
     
     def setPosicion(self,poss,facing):
-        pass
+        self.poss = poss
+        self.facing = facing
     
     def getPosicion(self):
-        return (1,1)
+        return self.poss
     
     def getFacing(self):
-        return "N"
+        return self.facing
