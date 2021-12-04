@@ -23,7 +23,7 @@ class MarsRover():
         pass
     
     def getPosicion(self):
-        return (None,None)
+        return (1,1)
     
     def getFacing(self):
-        return ""
+        return "N"
